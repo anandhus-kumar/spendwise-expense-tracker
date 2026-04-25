@@ -16,11 +16,11 @@ app.use(
   }),
 );
 app.use(express.json());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 connectDB();
 
 // routes
-
 app.use("/api/v1/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
